@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var obj = { name: 'jack' }
+      Object.defineProperty(obj, 'id', {
+        value: 1,
+        writable: false
+      })
+      console.log(Object.keys(obj))
+    </script>
+  </body>
+</html>

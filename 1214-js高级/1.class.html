@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // js中构造器不能省略
+      class Person {
+        constructor(uname, age) {
+          // console.log(yy === this) //false
+          this.uname = uname
+          this.age = age
+        }
+        sayHi(str) {
+          console.log(this.uname + str)
+        }
+      }
+      var yy = new Person('瑶瑶', 18)
+      console.log(yy)
+      yy.sayHi('狼来啦')
+
+      class Star extends Person {
+        constructor(uname, age) {
+          super(uname, age)
+        }
+        sayHi(str) {
+          // 方法重写
+          super.sayHi(str)
+        }
+      }
+      var zxc = new Star('周星星', 18)
+      console.log(zxc)
+      // zxc.sayHi('继承父亲的方法')
+      zxc.sayHi('儿子自己的方法')
+    </script>
+  </body>
+</html>

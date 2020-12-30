@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var uname = '小明'
+      function fn() {
+        console.log(this.uname)
+      }
+      var o = {
+        uname: '瑶瑶'
+      }
+      //   未改变this指向  window 对象
+      fn.call()
+      //   改变this 指向    o对象
+      fn.call(o)
+    </script>
+  </body>
+</html>

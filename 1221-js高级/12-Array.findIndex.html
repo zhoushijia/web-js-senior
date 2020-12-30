@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const data = [
+        { id: 1, name: '张三' },
+        { id: 2, name: '里斯' }
+      ]
+      //   数组的findIndex方法,查找复杂元素时使用;简单元素可以使用indexOf
+      let index = data.findIndex((item) => item.id == 2)
+      console.log(index)
+    </script>
+  </body>
+</html>

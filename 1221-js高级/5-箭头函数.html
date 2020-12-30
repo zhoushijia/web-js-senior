@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 箭头函数代码块如果只有一行可以省略{} 并且这一行是作为箭头函数的返回值的
+      const fn = () => console.log(1)
+      fn()
+
+      // 箭头函数代码块如果只有一行可以省略{} 并且这一行是作为箭头函数的返回值的 如果只有一个形参，形参的小括号也能省略
+      const fn1 = (a) => console.log(a)
+      fn1(10)
+
+      //   如果有多行，必须有{} 如果需要返回值则必须有return语句
+      const fn2 = (a, b) => {
+        const res = a + b
+        return res
+      }
+      console.log(fn2(10, 20))
+    </script>
+  </body>
+</html>

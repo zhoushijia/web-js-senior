@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Father(name, age) {
+        this.name = name
+        this.age = age
+      }
+      Father.prototype.talk = function () {
+        console.log(1)
+      }
+
+      function Son(name, age) {
+        //   构造函数当普通函数用
+        //  继承构造函数的属性
+        Father.call(this, name, age)
+      }
+
+      //   继承父构造函数的方法，改变了父亲的方法
+      //   Son.prototype = Father.prototype
+      //   继承父构造函数的方法，并且不改变父亲的方法
+      Son.prototype = new Father()
+      //   此时构造器属性未指向构造函数 ，所以要手动调整
+      Son.prototype.constructor = Son
+
+      Son.prototype.sing = function () {
+        console.log(2)
+      }
+      var s = new Son('哒哒哒', 18)
+      console.log(s)
+      s.sing()
+      var f = new Father('dididi', 36)
+      //   Uncaught TypeError: f.sing is not a function
+      //   f.sing()
+    </script>
+  </body>
+</html>

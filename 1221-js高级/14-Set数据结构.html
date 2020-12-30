@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arr = [1, 1, 1, 2, 2, 2]
+      //   数组去重
+      let s = new Set(arr)
+      let newArr = [...s]
+      console.log(newArr)
+
+      let s1 = new Set()
+      s1.add('dadada')
+      console.log(s1.add('da'))
+      console.log(s1.delete('da'))
+      console.log(s1.has('da'))
+      s1.clear()
+      console.log(s1.size)
+
+      // set中NaN等于自身，其余比较相当于 ===
+      let set3 = new Set()
+      let a = NaN
+      let b = NaN
+      set3.add(a)
+      set3.add(b)
+      console.log(set3)
+
+      // 两个对象总是不相等的  存储的是地址值
+      let set4 = new Set()
+      set4.add({}) // 1
+      console.log(set4.size)
+
+      set4.add({}) // 2
+      console.log(set4.size)
+    </script>
+  </body>
+</html>

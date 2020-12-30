@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 深拷贝拷贝多层, 每一级别的数据都会拷贝.
+      var obj = {
+        id: 1,
+        age: 18,
+        msg: {
+          info: '哒哒哒哒',
+          attack: {
+            hand: '智障二百五'
+          }
+        },
+        color: ['skyblue', 'orange', 'red']
+      }
+
+      var o = {}
+
+      //   构造深拷贝方法
+      //   这个不用返回值，因为是都是对象；传递的是地址值
+      function deepCopy(newObj, oldObj) {
+        //   对对象进行遍历
+        for (var k in oldObj) {
+          var item = oldObj[k]
+          //   如果item是数组  因为数组也是对象，所以判断数组放在前面
+          if (item instanceof Array) {
+            newObj[k] = []
+            deepCopy(newObj[k], item)
+            //   如果item是对象，则继续向下复制
+          } else if (item instanceof Object) {
+            newObj[k] = {}
+            deepCopy(newObj[k], item)
+          } else {
+            //   如果item是简单数据类型，则直接复制
+            newObj[k] = oldObj[k]
+          }
+        }
+      }
+
+      deepCopy(o, obj)
+      console.log(o)
+      o.msg.info = '我是鲁班七号'
+      console.log(obj)
+    </script>
+  </body>
+</html>

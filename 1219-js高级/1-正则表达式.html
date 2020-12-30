@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 包含12a即可
+      var regexp = /12a/
+      console.log(regexp.test('12')) // false
+      console.log(regexp.test('12abddd')) //true
+      //   边界符 ^ $
+      //   以12开头
+      var reg = /^12/
+      console.log(reg.test('123333')) // true
+      console.log(reg.test('2123333')) // false
+      //   abc结尾
+      var rg = /abc$/
+      console.log(rg.test('123333abc')) // true
+      console.log(rg.test('123333ab')) // false
+      //   必须时12a
+      var re = /^12a$/
+      console.log(re.test('12a')) // true
+      console.log(re.test('12a3')) // false
+    </script>
+  </body>
+</html>

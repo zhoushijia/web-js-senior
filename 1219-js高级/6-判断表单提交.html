@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .error {
+        color: #f00;
+      }
+      .correct {
+        color: #0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="demo.php" id="form">
+      用户名：<input type="text" id="user" /><span id="userText"></span><br />
+      <!-- 输入法全角空格 -->
+      密　码：<input type="password" id="pwd" /><span id="pwdText"></span><br />
+      <input type="submit" value="登录" /> 　　　
+    </form>
+    <script>
+      var user = document.querySelector('#user')
+      var pwd = document.querySelector('#pwd')
+      var userText = document.querySelector('#userText')
+      var pwdText = document.querySelector('#pwdText')
+      var form = document.querySelector('#form')
+      user.onblur = checkUser
+      function checkUser() {
+        if (user.value.length >= 6) {
+          userText.innerHTML = '输入正确'
+          userText.className = 'correct'
+          return true
+        } else {
+          userText.innerHTML = '输入不正确'
+          userText.className = 'error'
+          return false
+        }
+      }
+      pwd.onblur = checkPwd
+      function checkPwd() {
+        if (pwd.value.length >= 12) {
+          pwdText.innerHTML = '输入正确'
+          pwdText.className = 'correct'
+          return true
+        } else {
+          pwdText.innerHTML = '输入不正确'
+          pwdText.className = 'error'
+          return false
+        }
+      }
+
+      //   给表单注册表单提交事件,而不是提交按钮
+      form.onsubmit = function () {
+        return checkUser() && checkPwd()
+      }
+    </script>
+  </body>
+</html>

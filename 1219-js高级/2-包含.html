@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   包含123其中一个数字就行
+      var regexp = /[123]/
+      console.log(regexp.test(11111)) // true
+      console.log(regexp.test(12)) // true
+      var rg = /^[a-zA-Z0-9_-]$/
+      console.log(rg.test('S')) // true
+      console.log(rg.test('Ss')) // false
+      //   取反
+      var reg = /[^a-zA-Z]/
+      console.log(reg.test('Sss')) // false
+      console.log(reg.test(123)) // true
+    </script>
+  </body>
+</html>

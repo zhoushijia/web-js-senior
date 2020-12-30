@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Star(uname, age) {
+        //   实例对象
+        this.uname = uname
+        this.age = age
+      }
+      // 原型对象,原型对象用来定义所有对象的公共方法,防止内存浪费
+      Star.prototype.sing = function () {
+        alert(this.uname)
+      }
+      var ldh = new Star('刘德华', 18)
+      var zxy = new Star('张学友', 20)
+      console.log(ldh.sing === zxy.sing)
+      ldh.sing()
+
+      //   静态成员
+      Star.sex = '男'
+      Star.work = function () {
+        alert('sing')
+      }
+      Star.work()
+    </script>
+  </body>
+</html>

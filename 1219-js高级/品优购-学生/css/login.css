@@ -1,0 +1,106 @@
+.w {
+  width: 1200px;
+  margin: 0 auto;
+}
+/* 头部 */
+header {
+  height: 84px;
+}
+.logo {
+  padding-top: 18px;
+}
+/* 内容 */
+.content {
+  position: relative;
+  height: 486px;
+  background: url(../img/land.png) no-repeat top;
+}
+.con_bd {
+  position: absolute;
+  top: 62px;
+  left: 900px;
+  width: 380px;
+  height: 365px;
+  background-color: #fff;
+  padding-left: 40px;
+}
+.con_bd h2 {
+  width: 142px;
+  height: 28px;
+  font-size: 18px;
+  color: #666666;
+  margin-left: 6px;
+  margin-top: 20px;
+  border-right: 1px solid #ededed;
+}
+.con_bd h3 {
+  position: absolute;
+  top: 20px;
+  right: 46px;
+  font-size: 18px;
+  color: #d46066;
+}
+.con_box {
+  width: 302px;
+  height: 24px;
+  line-height: 24px;
+  background-color: #fffdee;
+  border: 1px solid #f5eecf;
+  padding-left: 10px;
+  margin: 24px 0 12px 0;
+}
+.inp{
+  margin-bottom: 18px;
+}
+.inp input[type="text"],.inp input[type="password"]{
+  width: 266px;
+  height: 34px;
+  padding-left:44px;
+  border:1px solid #bbbaba;
+}
+.inp input[type="text"]:focus,.inp input[type="password"]:focus{
+  outline:1px solid #3aa2e4;
+}
+.inp input[type="text"]{
+  background: url(../img/account.png) no-repeat;
+  background-size: auto 100%;
+}
+.inp input[type="password"]{
+  background: url(../img/password.png) no-repeat;
+}
+.inp input::placeholder{
+  color:#b2b2b2;
+}
+.con_bd img {
+  margin-bottom: 16px;
+}
+.con_bd button {
+  width: 203px;
+  height: 42px;
+  line-height: 42px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #c81623;
+  margin-bottom: 25px;
+}
+.con_bd p {
+  position: absolute;
+  bottom: 24px;
+  right: 48px;
+  font-size: 14px;
+  color: #1474af;
+}
+/* 尾部 */
+.mod_copyright {
+  text-align: center;
+  padding-top: 20px;
+}
+.links {
+  margin-bottom: 15px;
+}
+.links a {
+  margin: 0 3px;
+}
+.copyright {
+  line-height: 20px;
+}

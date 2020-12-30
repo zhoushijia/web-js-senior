@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      i {
+        font-style: normal;
+      }
+    </style>
+  </head>
+  <body>
+    <button>赞(<i>0</i>)</button>
+    <button>赞(<i>0</i>)</button>
+    <button>赞(<i>0</i>)</button>
+    <button>赞(<i>0</i>)</button>
+    <script>
+      var btns = document.querySelectorAll('button')
+      var is = document.querySelectorAll('button i')
+      for (var i = 0; i < btns.length; i++) {
+        ;(function (i) {
+          btns[i].addEventListener('click', function () {
+            is[i].innerHTML++
+          })
+        })(i)
+      }
+    </script>
+  </body>
+</html>

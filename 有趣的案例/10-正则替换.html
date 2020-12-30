@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const obj = {
+        name: '张三',
+        age: 18,
+        sex: '男'
+      }
+      let str = '我是{name},我今年{age}岁,我是{sex}生'
+      //   将str中的大括号内容换成对象中属性
+      //   第一种方法
+      //   const reg = /{\w+}/g
+      //   //   arr = reg.exec(str)  核心代码
+      //   while ((arr = reg.exec(str))) {
+      //     let a = arr[0].substr(1, arr[0].length - 2)
+      //     str = str.replace(arr[0], obj[a])
+      //   }
+      //   第二种方法
+      const reg = /{(\w+)}/g
+      //   arr = reg.exec(str)  核心代码
+      while ((arr = reg.exec(str))) {
+        str = str.replace(arr[0], obj[arr[1]])
+      }
+      console.log(str)
+    </script>
+  </body>
+</html>

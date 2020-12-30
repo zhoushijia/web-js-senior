@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 取别名
+      let { data: myData } = {
+        data: {
+          id: 500,
+          rid: 0,
+          username: 'admin',
+          mobile: '18820121111',
+          email: 'aa55123@qq.cooooo',
+          token: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2MDg1MTYzMzMsImV4cCI6MTYwODYwMjczM30.lWMYFRo-ESovyE_cireFhMR2cY34w6jr0oaoWdwHD68'
+        },
+        meta: {
+          msg: '登录成功',
+          status: 200
+        }
+      }
+      console.log(myData.id)
+    </script>
+  </body>
+</html>

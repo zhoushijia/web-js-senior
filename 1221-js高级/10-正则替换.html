@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const obj = {
+        name: '张三',
+        age: 18,
+        sex: '男'
+      }
+      let str = '我是{name},我今年{age}岁,我是{sex}生'
+      //   将str中的大括号内容换成对象中属性
+      //   方法一 RegExp.exec
+      //   const reg = /{\w+}/g
+      //   //   arr = reg.exec(str)  核心代码
+      //   while ((arr = reg.exec(str))) {
+      //     let a = arr[0].substr(1, arr[0].length - 2)
+      //     str = str.replace(arr[0], obj[a])
+      //   }
+
+      //   方法二 RegExp.exec
+      //   let reg = /{(\w+)}/g
+      //   while ((arr = reg.exec(str))) {
+      //     //   arr[1]中存储的是对象相应的属性名
+      //     str = str.replace(arr[0], obj[arr[1]])
+      //   }
+      //   console.log(str)
+
+      //   方法三 String.match
+      //   这里采用的是String中的match查找
+      //   然后采用replace替换就行
+      //   let reg = /{\w+}/g
+      //   let arr = str.match(reg)
+      //   arr.forEach((item) => (str = str.replace(item, obj[item.substr(1, item.length - 2)])))
+      //   console.log(str)
+
+      //   方法四 String.replace 最简单的方法
+      let reg = /{(\w+)}/g
+      //   replace中第一个参数是正则表达式,第二个参数是满足第一个参数的所有元素的数组,再利用数组进行操作
+      var res = str.replace(reg, (...args) => (args[0] = obj[args[1]]))
+      console.log(res)
+    </script>
+  </body>
+</html>

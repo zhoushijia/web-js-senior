@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>开始</button>
+    <script>
+      document.querySelector('button').addEventListener('click', function () {
+        console.log(this)
+        this.disabled = true
+        // 这里的this不是指向的window,箭头函数中this指向与当前数组环境有关
+        setTimeout(() => (this.disabled = false), 2000)
+      })
+      //   document.querySelector('button').addEventListener('click', () => {
+      //     console.log(this) // window 因为该箭头函数处于全局作用域下，故向window
+      //     this.disabled = true
+      //     // 这里的this不是指向的window,箭头函数中this指向与当前数组环境有关
+      //     setTimeout(() => (this.disabled = false), 2000)
+      //   })
+    </script>
+  </body>
+</html>

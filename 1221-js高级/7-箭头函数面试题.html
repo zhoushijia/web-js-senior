@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   let age = 20 // 暂时性死区   此时age属性不属于window属性了
+      var age = 20 //age属于window的属性
+      let obj = {
+        age: 18,
+        // 对象的{}不属于作用域 这里的this在全局作用域下，即window
+        say: () => this.age
+        // say: () => {
+        //   console.log(this)
+        //   this.age
+        // }
+      }
+      console.log(obj.say()) //20
+    </script>
+  </body>
+</html>

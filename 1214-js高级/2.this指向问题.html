@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn">按钮</button>
+    <script>
+      var that
+      class Tab {
+        constructor() {
+          //   that用来保存当前对象
+          that = this
+          this.msg = '信息'
+          this.btn = document.querySelector('#btn')
+          this.btn.onclick = this.showInfo
+        }
+        showInfo() {
+          // this指向问题 这里的this指向触发它的事件即btn
+          //   console.log(this)
+          //   that用来保存当前对象
+          console.log(that.msg)
+        }
+      }
+      new Tab()
+    </script>
+  </body>
+</html>

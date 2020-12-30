@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Father(name, age) {
+        this.name = name
+        this.age = age
+      }
+      function Son(name, age) {
+        //   构造函数当普通函数用
+        // 继承构造函数的属性
+        Father.call(this, name, age)
+      }
+      var s = new Son('哒哒哒', 18)
+      console.log(s)
+    </script>
+  </body>
+</html>

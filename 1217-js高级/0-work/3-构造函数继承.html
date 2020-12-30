@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 创建一个构造函数并生成实例并打印出构造函数的原型与实例的原型
+      //   一个构造函数Father中有money cars house company 属性,有管理的方法,另一个构造函数Son要继承构造函数Father的属性和方法
+      function Father(money, cars, house, company) {
+        this.money = money
+        this.cars = cars
+        this.house = house
+        this.company = company
+      }
+      Father.prototype.manage = function () {
+        console.log('车' + this.cars)
+      }
+      function Son(money, cars, house, company) {
+        Father.call(this, money, cars, house, company)
+      }
+      Son.prototype = new Father()
+      Son.prototype.constructor = Son
+      var s = new Son('1000000', 'c', 'h', 'M')
+      console.log(s)
+      s.manage()
+    </script>
+  </body>
+</html>

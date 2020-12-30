@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      {
+        //   只分函数内和函数外  函数外:全局作用域  内:局部作用域  与大括号无关
+        var m = 33
+        // 块级作用域
+        let n = 1
+        console.log(m, n)
+      }
+      console.log(m)
+      //   console.log(n)  //报错
+
+      //   let 无变量提升(预解析)
+      //   console.log(n1) //报错
+      let n1 = 2
+
+      //   暂时性死区,绑定作用域
+      let n3 = 30
+      if (true) {
+        // console.log(n3)   //报错
+        let n3 = 3
+      }
+    </script>
+  </body>
+</html>

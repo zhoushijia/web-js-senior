@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 2 - 为数组对象的原型添加求和的方法
+      Array.prototype.sum = function () {
+        var s = 0
+        this.forEach(function (item) {
+          s += item
+        })
+        return s
+      }
+      var arr = [1, 2, 3, 4, 5, 6]
+      console.log(arr.sum())
+    </script>
+  </body>
+</html>

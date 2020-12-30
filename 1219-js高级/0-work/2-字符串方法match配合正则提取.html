@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 将字符串'小明：大神么么哒，正好是我想要的，我的邮箱是xiaoming@qq.com小红：我老公最爱看这个了，我想给他一个惊喜，么么么哒，邮箱是xiaohong@sina.com我：好人一生平安，邮箱是wuyou@163.com'中所有的邮箱号码提取出来
+      let str = '小明：大神么么哒，正好是我想要的，我的邮箱是xiaoming@qq.com小红：我老公最爱看这个了，我想给他一个惊喜，么么么哒，邮箱是xiaohong@sina.com我：好人一生平安，邮箱是wuyou@163.com'
+      let reg = /\w+@\w+\.\w+/g
+      let arr = str.match(reg)
+      console.log(arr)
+    </script>
+  </body>
+</html>

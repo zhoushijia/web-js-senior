@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function fn() {
+        var num = Math.random()
+        return function f() {
+          return num
+        }
+      }
+      var ff = fn()
+      var n = ff()
+      var m = ff()
+      console.log(n, m)
+    </script>
+  </body>
+</html>

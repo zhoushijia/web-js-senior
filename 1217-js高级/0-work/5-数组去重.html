@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 使用数组方法filter来实现数组的去重
+      var arr = [1, 1, 1, 2, 4, 3, 5, 7, 4, 8, 9, 2, 3, 5]
+      //   这里可以利用filter方法中的三个参数
+      var newArr = arr.filter(function (item, index, a) {
+        // 利用filter方法中的三个参数
+        return a.indexOf(item) === index
+      })
+      console.log('去重后的数组' + newArr)
+    </script>
+  </body>
+</html>

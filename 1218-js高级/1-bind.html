@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>点击1</button>
+    <button>点击2</button>
+    <button>点击3</button>
+    <script>
+      var btns = document.querySelectorAll('button')
+      btns.forEach(function (item) {
+        item.addEventListener('click', function () {
+          this.disabled = true
+          setTimeout(
+            function () {
+              this.disabled = false
+              // bind只改变this的指向,不调用函数,返回一个新的函数
+              //   call改变this的指向,调用函数,
+              //   apply改变this的指向,调用函数,传递的参数是数组
+            }.bind(this),
+            2000
+          )
+        })
+      })
+    </script>
+  </body>
+</html>

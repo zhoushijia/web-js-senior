@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+    <button>按钮4</button>
+    <script>
+      // 闭包延长变量的生命周期
+      var btns = document.querySelectorAll('button')
+
+      //   非闭包写法
+      //   for (var i = 0; i < btns.length; i++) {
+      //     btns[i].index = i
+      //     btns[i].addEventListener('click', function () {
+      //       console.log(this.index)
+      //     })
+      //   }
+
+      //   btns.forEach(function (item, i) {
+      //     item.addEventListener('click', function () {
+      //       console.log(i)
+      //     })
+      //   })
+
+      // 闭包写法
+      for (var i = 0; i < btns.length; i++) {
+        ;(function (i) {
+          btns[i].addEventListener('click', function () {
+            console.log(i)
+          })
+        })(i)
+      }
+
+      //   3s后打印出所有内容
+      for (var i = 0; i < btns.length; i++) {
+        ;(function (i) {
+          setTimeout(function () {
+            console.log(btns[i].innerHTML)
+          }, 3000)
+        })(i)
+      }
+    </script>
+  </body>
+</html>

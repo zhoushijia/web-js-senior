@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 一个父类中有money(钱) cars(车) house(房) company(公司) 属性,有管理(manage)的方法,子类要继承父类中的属性和方法
+      class Father {
+        constructor(money, cars, house, company) {
+          this.money = money
+          this.cars = cars
+          this.house = house
+          this.company = company
+        }
+        manage() {
+          console.log('manager' + this.company)
+        }
+      }
+      class Son extends Father {
+        constructor(money, cars, house, company) {
+          super(money, cars, house, company)
+        }
+      }
+      var s = new Son(1000000, 'bmw', 'whiteHouse', 'Microsoft')
+      // s.company = 'hh'
+      console.log(s)
+      s.manage()
+    </script>
+  </body>
+</html>
